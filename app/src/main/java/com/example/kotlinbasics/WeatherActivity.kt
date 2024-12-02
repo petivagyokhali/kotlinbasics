@@ -56,7 +56,7 @@ class WeatherActivity : AppCompatActivity() {
                     }
                 }
             }
-
+            //hibakezeles
             override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
                 Log.e("Hiba","Hiba az API kérés során.")
             }
