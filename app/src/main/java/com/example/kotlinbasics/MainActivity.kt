@@ -267,5 +267,5 @@ class MainActivity : AppCompatActivity() {
             val intent =Intent(this, WeatherActivity::class.java)
             startActivity(intent)
         }
-    }//ONCREATE
+    }//ONCREATE nemiga
 }//CLASS
