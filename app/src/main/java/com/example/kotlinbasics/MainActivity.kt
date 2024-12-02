@@ -261,6 +261,7 @@ class MainActivity : AppCompatActivity() {
             val intent =Intent(this, GreetingActivity::class.java)
             startActivity(intent)
         }
+        //openweather
         openWeatherButton.setOnClickListener(){
             //intent létrehozása és activity indítása
             val intent =Intent(this, WeatherActivity::class.java)
