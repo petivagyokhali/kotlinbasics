@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center_horizontal">
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/btn_star_big_on"/>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add meg a neved"
+        android:inputType="textPersonName"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="16dp"/>
+    <Button
+        android:id="@+id/greetingButton"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Köszönts!"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/openCalculatorButton"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Számológép megnyitása"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+</LinearLayout>
