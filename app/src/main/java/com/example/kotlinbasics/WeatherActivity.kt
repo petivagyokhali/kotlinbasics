@@ -2,6 +2,8 @@ package com.example.kotlinbasics
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class WeatherActivity : AppCompatActivity() {
     private lateinit var textviewTemp: TextView
     private lateinit var textview_feelsLike: TextView
+    private lateinit var textview_humidity: TextView
+    private lateinit var textview_windSpeed: TextView
+    private lateinit var varos_EditText: EditText
+    private lateinit var keresesButton: Button
+
     private val apiKey = "d62c8316648e688690fbaf18587ce8b0"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +37,18 @@ class WeatherActivity : AppCompatActivity() {
 //        }
         textviewTemp=findViewById(R.id.textView_temp)
         textview_feelsLike=findViewById(R.id.textView_feelsLike)
-        fetchWeatherData()
+        //fetchWeatherData()
+        textview_humidity=findViewById(R.id.textView_humidity)
+        textview_windSpeed=findViewById(R.id.textView_windSpeed)
+        varos_EditText=findViewById(R.id.varos_EditText)
+        keresesButton=findViewById(R.id.keresesButton)
 
+
+        keresesButton.setOnClickListener(){
+            fetchWeatherData()
+        }
     }
+
 
 
     private fun fetchWeatherData() {
@@ -43,7 +59,8 @@ class WeatherActivity : AppCompatActivity() {
 
         val weatherService=retrofit.create(WeatherService::class.java)
 
-        val call=weatherService.getWeather("Tatabánya", "metric", apiKey)
+
+        val call=weatherService.getWeather(varos_EditText.text.toString(), "metric", apiKey)
         call.enqueue(object:Callback<WeatherResponse> {
             override fun onResponse(
                 call: Call<WeatherResponse>,
@@ -53,9 +70,13 @@ class WeatherActivity : AppCompatActivity() {
                     val weatherResponse=response.body()
                     if(weatherResponse!=null){
                         val weatherInfo=weatherResponse.main.temp
-                        textviewTemp.text=weatherInfo.toString()
+                        textviewTemp.text=weatherInfo.toString()+" Celsius"
                         val weatherInfo2=weatherResponse.main.feels_like
-                        textview_feelsLike.text=weatherInfo2.toString()
+                        textview_feelsLike.text=weatherInfo2.toString()+" Celsiusnak érződik"
+                        val weatherInfo3=weatherResponse.main.humidity
+                        textview_humidity.text=weatherInfo3.toString()+" páratartalom"
+                        val weatherInfo4=weatherResponse.wind.speed
+                        textview_windSpeed.text=weatherInfo4.toString()+" szélerősség"
                     }
                 }
             }

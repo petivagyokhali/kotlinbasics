@@ -9,18 +9,45 @@
     android:gravity="center"
     tools:context=".WeatherActivity">
 
+    <EditText
+        android:id="@+id/varos_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adj meg egy város nevet!"
+        android:textAlignment="center"
+        />
+    <Button
+        android:id="@+id/keresesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Keresés"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp"/>
+
     <TextView
         android:id="@+id/textView_temp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Időjárás adatok megjelenítése itt"
         android:textSize="20sp"
         android:gravity="center"/>
     <TextView
         android:id="@+id/textView_feelsLike"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Időjárás adatok megjelenítése itt"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+    <TextView
+        android:id="@+id/textView_humidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"/>
+    <TextView
+        android:id="@+id/textView_windSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="20sp"
         android:gravity="center"
         android:layout_marginTop="16dp"/>

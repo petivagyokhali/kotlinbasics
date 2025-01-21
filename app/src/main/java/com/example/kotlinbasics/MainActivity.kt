@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var openGreetingButton: Button
     private lateinit var openCalculatorButton: Button
     private lateinit var openWeatherButton: Button
+    private lateinit var openUserListButton:Button
 
     data class Root(
         var universityName: String,
@@ -250,6 +251,7 @@ class MainActivity : AppCompatActivity() {
         openGreetingButton = findViewById(R.id.openGreetingButton)
         openCalculatorButton = findViewById(R.id.openCalculatorButton)
         openWeatherButton=findViewById(R.id.openWeatherButton)
+        openUserListButton=findViewById(R.id.openUserListButton)
 
         openCalculatorButton.setOnClickListener(){
             //intent létrehozása és activity indítása
@@ -265,6 +267,11 @@ class MainActivity : AppCompatActivity() {
         openWeatherButton.setOnClickListener(){
             //intent létrehozása és activity indítása
             val intent =Intent(this, WeatherActivity::class.java)
+            startActivity(intent)
+        }
+        openUserListButton.setOnClickListener(){
+            //intent létrehozása és activity indítása
+            val intent =Intent(this, UserListActivity::class.java)
             startActivity(intent)
         }
     }//ONCREATE nemiga
