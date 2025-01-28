@@ -28,6 +28,7 @@ class RandomUserListActivity : AppCompatActivity() {
         //        val recyclerView: RecyclerView = findViewById(R.id.userListRecyclerView)
 //        recyclerView.layoutManager = LinearLayoutManager(this)
 //        recyclerView.adapter=UserAdapter(users)
+        fetchRandomUserList()
 
     }
     private fun fetchRandomUserList() {
